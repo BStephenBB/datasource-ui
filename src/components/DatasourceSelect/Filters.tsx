@@ -23,20 +23,26 @@ export function Filters({
 
   return (
     <div className="filters">
-      <input
-        type="search"
-        placeholder="Search"
-        value={query}
-        onChange={searchHandler}
-      />
-      <select value={filter} onChange={filterHandler} aria-label="Filter by">
-        <option value="default" disabled hidden>
-          Filter by
-        </option>
-        {filter !== 'default' ? <option value="all">All</option> : null}
-        <option value="db">Database</option>
-        <option value="other">Other</option>
-      </select>
+      <div className="search">
+        <img src="search.svg" alt="search icon" />
+        <input
+          type="search"
+          placeholder="Search"
+          value={query}
+          onChange={searchHandler}
+        />
+      </div>
+      <div className="filter">
+        <img src="chevron.svg" alt="down arrow icon" />
+        <select value={filter} onChange={filterHandler} aria-label="Filter by">
+          <option value="default" disabled hidden>
+            Filter by
+          </option>
+          {filter !== 'default' ? <option value="all">All</option> : null}
+          <option value="db">Database</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
     </div>
   )
 }
